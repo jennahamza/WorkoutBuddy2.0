@@ -14,6 +14,7 @@ const App = () => {
       <UserContext.Provider value={user}>
         <BrowserRouter>
           <NavBar />
+          <h3>Your hub for fitness accountability</h3>
           <Routes>
             <Route path="/" element={<LogIn />} />
             <Route path="/newactivity" element={<ActivityInput />} />

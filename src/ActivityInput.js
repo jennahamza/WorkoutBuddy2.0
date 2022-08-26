@@ -14,8 +14,8 @@ const ActivityInput = () => {
   // }
 
   return (
-    <div id="activity-input">
-      <form>
+    <div>
+      <form id="activity-input">
         <label htmlFor="date">
           <input id="date" value={date} placeholder="Date" />
         </label>
@@ -42,7 +42,7 @@ const ActivityInput = () => {
             ))}
           </select>
         </label>
-        <button>Submit Activity</button>
+        <button id="submit-activity">Submit Activity</button>
       </form>
     </div>
   );

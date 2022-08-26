@@ -1,0 +1,188 @@
+body {
+  background-image: url('https://www.publicdomainpictures.net/pictures/380000/velka/outdoor-yoga.jpg');
+  font-family: Arial, Helvetica, sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: darkslategray;
+  background: rgba(44, 36, 49, 0.775);
+  margin-top: 0;
+}
+
+h1 {
+  margin: 15px;
+  color: rgb(234, 230, 230);
+}
+
+h3 {
+  display: flex;
+  margin: 15px;
+  color: rgb(255, 248, 248);
+  align-self: center
+}
+
+button {
+  border: gray;
+  border-radius: 5px;
+  border: 1px;
+  box-shadow: 2px 1px 8px 2px rgba(85, 84, 84, 0.3);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* STYLING FOR INDEX.HTML */
+
+#activity-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 5px;
+  /* height: 30px; */
+  /* width: 100px; */
+  /* background-color: darkslategray; */
+  color: lightblue;
+}
+
+#display {
+  display: flex;
+  flex-direction: column;
+}
+
+/* #resetuser {
+  margin: 5px;
+  height: 30px;
+  width: 100px;
+  background-color: white;
+  color: cornflowerblue;
+} */
+
+#current-user {
+  font-size: 16px;
+  margin: 15px 0px 0px;
+  color: rgb(234, 230, 230);
+}
+
+input {
+  margin: 15px;
+  padding: 7px;
+  height: 27px;
+  width: 200px;
+  border-radius: 10px;
+  border: 1px;
+  border-color: gray;
+  background-color: rgb(234, 230, 230);
+  font-size: 15px;
+  box-shadow: 2px 1px 10px 2px rgba(85, 84, 84, 0.4);
+}
+
+#name {
+  background-color: white;
+}
+
+#activity-submitted {
+  color: white;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin: 0;
+  padding: 0;
+}
+
+select {
+  margin: 15px;
+  height: 40px;
+  width: 210px;
+  border-radius: 10px;
+  border: 1px;
+  border-color: gray;
+  background-color: rgb(234, 230, 230);
+  font-size: 15px;
+  box-shadow: 2px 1px 10px 2px rgba(85, 84, 84, 0.4);
+  color: gray;
+}
+
+/* label {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+} */
+
+#log-activity {
+  margin: 5px;
+  height: 30px;
+  width: 110px;
+  background-color: white;
+  color: cornflowerblue;
+}
+
+#login-button, #submit-activity {
+  margin: 40px;
+  height: 50px;
+  width: 250px;
+  background-color: darkslategray;
+  color: lightblue;
+}
+
+
+/* STYLING OFOR LOG.HTML */
+
+#display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}
+
+table {
+  text-align: center;
+  background-color: rgb(234, 230, 230, 0.6);
+  border-radius: 10px;
+  overflow-y: scroll;
+  height: 350px;
+}
+
+tr {
+  padding: 10px;
+}
+
+th {
+  padding: 30px;
+}
+
+#back {
+  margin: 50px;
+  height: 40px;
+  width: 100px;
+  background-color: darkslategray;
+  color: lightblue;
+}

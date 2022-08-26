@@ -7,11 +7,12 @@ const LogIn = () => {
   const [password, setPassword] = useState("");
   const [user, setUser] = useContext(UserContext);
 
-  const userLogin = () => {
-    // const res = await fetch(`/api/setuser?name=${username}`);
-    // const json = await res.json();
+  async function userLogin() {
+    const res = await fetch(`/api/setuser?name=${username}`);
+    const json = await res.json();
+    console.log("userLogin response", json);
     setUser(username);
-  };
+  }
 
   return (
     <form
@@ -33,9 +34,9 @@ const LogIn = () => {
         type="text"
         placeholder="Password"
       ></input>
-      <button>
-        <Link to={`/welcome/${username}`}>Login</Link>
-      </button>
+      <Link to={`/welcome/${username}`}>
+        <button id="login-button">Login</button>
+      </Link>
     </form>
   );
 };
