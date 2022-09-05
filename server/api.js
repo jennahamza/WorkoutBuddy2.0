@@ -1,6 +1,7 @@
 const express = require("express");
 const UserController = require("./controllers/UserController");
 const ActivityController = require("./controllers/ActivityController");
+const { restart } = require("nodemon");
 
 const router = express.Router();
 
@@ -32,5 +33,9 @@ router.get(
     return res.status(200).json(res.locals.activities);
   }
 );
+
+router.post("/activities", ActivityController.newActivity, (req, res) => {
+  return res.status(200).send("success");
+});
 
 module.exports = router;

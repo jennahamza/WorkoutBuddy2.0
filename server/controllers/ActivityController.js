@@ -16,4 +16,28 @@ ActivityController.userActivities = async (req, res, next) => {
   return next();
 };
 
+ActivityController.newActivity = async (req, res, next) => {
+  console.log("posting new activity");
+  const { username, date, activity, duration, intensity } = req.body;
+
+  try {
+    const valueA = [username];
+    const queryA = `SELECT id FROM public.user WHERE username = $1`;
+    const userData = await db.query(queryA, valueA);
+    if (userData.rows[0]) {
+      const id = userData.rows[0].id;
+    } else {
+      console.log("error: no user is signed in");
+    }
+    console.log("id", id);
+    const valueB = [id, date, activity, duration, intensity];
+    const queryB = `INSERT INTO activity (user_id, date, activity, duration, intensity) VALUES ($1, $2, $3, $4, $5)`;
+    const data = await db.query(queryB, valueB);
+
+    return next();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 module.exports = ActivityController;
