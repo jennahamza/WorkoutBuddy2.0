@@ -17,7 +17,7 @@ const ActivityInput = () => {
     <div>
       <form id="activity-input">
         <label htmlFor="date">
-          <input id="date" value={date} placeholder="Date" />
+          <input id="date" placeholder="Date" />
         </label>
         <label htmlFor="activity">
           <select id="activity" value={activity}>
@@ -30,7 +30,7 @@ const ActivityInput = () => {
           </select>
         </label>
         <label htmlFor="duration">
-          <input id="duration" value={duration} placeholder="Duration" />
+          <input id="duration" placeholder="Duration" />
         </label>
         <label htmlFor="intensity">
           <select id="intensity" value={intensity}>

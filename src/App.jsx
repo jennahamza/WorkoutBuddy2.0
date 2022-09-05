@@ -4,8 +4,10 @@ import { StrictMode, useState } from "react";
 import ActivityInput from "./ActivityInput";
 import NavBar from "./NavBar";
 import LogIn from "./LogIn";
+import SignUp from "./SignUp";
 import ActivityLog from "./ActivityLog";
 import UserContext from "./UserContext";
+import "./style.css";
 
 const App = () => {
   const user = useState("");
@@ -18,7 +20,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<LogIn />} />
             <Route path="/newactivity" element={<ActivityInput />} />
-            <Route path="/welcome/:user" element={<ActivityLog />} />
+            <Route path="/welcome/" element={<ActivityLog />} />
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
         </BrowserRouter>
       </UserContext.Provider>

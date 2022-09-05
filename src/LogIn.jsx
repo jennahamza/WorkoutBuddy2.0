@@ -5,13 +5,27 @@ import UserContext from "./UserContext";
 const LogIn = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [redirect, setRedirect] = useState(false);
   const [user, setUser] = useContext(UserContext);
 
   async function userLogin() {
-    const res = await fetch(`/api/setuser?name=${username}`);
-    const json = await res.json();
-    console.log("userLogin response", json);
-    setUser(username);
+    const res = await fetch("/api/login", {
+      method: "POST",
+      body: JSON.stringify({
+        username: username,
+        password: password,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log("status", res.status);
+    console.log("user", user);
+    setRedirect(true);
+  }
+
+  if (redirect) {
+    return <Navigate to="/welcome" />;
   }
 
   return (
@@ -23,7 +37,10 @@ const LogIn = () => {
       }}
     >
       <input
-        onChange={(e) => setUsername(e.target.value)}
+        onChange={(e) => {
+          setUsername(e.target.value);
+          setUser(e.target.value);
+        }}
         id="username"
         type="text"
         placeholder="Username"
@@ -34,8 +51,9 @@ const LogIn = () => {
         type="text"
         placeholder="Password"
       ></input>
-      <Link to={`/welcome/${username}`}>
-        <button id="login-button">Login</button>
+      <button id="login-button">Login</button>
+      <Link to="/signup">
+        <button id="login-button">Sign Up</button>
       </Link>
     </form>
   );
