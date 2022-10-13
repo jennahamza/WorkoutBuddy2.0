@@ -2,13 +2,13 @@
   "name": "workoutbuddy2.0",
   "version": "1.0.0",
   "description": "Find a workout partner in your area",
-  "main": "src/App.js",
+  "source": "src/index.html",
   "scripts": {
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "dev": "parcel src/index.html",
+    "dev": "parcel",
     "build": "parcel build",
-    "start": "npm -s run build && node dist/backend/server.js"
+    "start": "parcel src/index.html"
   },
   "repository": {
     "type": "git",
@@ -61,7 +61,9 @@
   ],
   "targets": {
     "frontend": {
-      "source": "src/index.html",
+      "source": [
+        "src/index.html"
+      ],
       "publicUrl": "/frontend"
     },
     "backend": {

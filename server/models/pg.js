@@ -5,6 +5,10 @@ const pool = new Pool({
     "postgres://sjxrstgh:iR0HV9yqnUfh_XQKVaihWLvit9TfHILD@heffalump.db.elephantsql.com/sjxrstgh",
 });
 
+pool.on("connection", () => {
+  console.log("Connected to DB");
+});
+
 module.exports = {
   query: (text, params, callback) => {
     console.log("executed query", text);
